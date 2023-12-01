@@ -1,0 +1,228 @@
+.text-justify {
+    text-align: justify!important;
+}
+
+.cadreImg {
+    min-height: 200px;
+    max-width: 300px;
+}
+
+.cadreImg img {
+    width: 100%;
+    border: 1.5px solid rgb(201, 201, 201);
+    height: 100%;
+}
+
+.bgSection {
+    background-image: url("../styles/Assets/images/img11.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    background-size: 100% auto;
+    box-shadow: 00px 00px 1100px 80px #151e29 inset;
+}
+
+.carousel-item {
+    text-decoration: none!important;
+}
+
+.box {
+    height: 200px;
+    width: 100%;
+}
+
+.box-contenu {
+    border: 2px rgb(81, 120, 128);
+    border-radius: 8px;
+    background-image: linear-gradient(to right, #3e3f3a 10%, #0a1d29 70%);
+    min-width: 460px;
+}
+
+.box-text div p {
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+}
+
+.box-text div {
+    padding: 10px;
+}
+
+.box-text h4,
+.box-text p {
+    margin-top: 5px;
+}
+
+.img-box {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* formulaire */
+
+#formulaire {
+    border: 1px solid #48453d;
+    border-left: none;
+    border-right: none;
+    background: url(../styles/Assets/images/img16.png) center top no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    margin-left: -105px;
+    margin-right: -105px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    height: 700px;
+}
+
+.form-control {
+    color: rgb(207, 207, 207) !important;
+}
+
+#formulaire form .f-formulaire {
+    margin-top: 30px;
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-width: thin;
+    border-bottom-style: outset;
+}
+
+#formulaire form {
+    height: auto;
+    width: 90%;
+}
+
+.bg-formulaire {
+    background-image: linear-gradient(#07338c80, #b4202f85);
+    width: 100%;
+}
+
+#formulaire form p {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Space Grotesk-regular';
+}
+
+#formulaire form label {
+    font-size: 20px;
+    margin-top: 30px;
+    font-family: 'rajdhani';
+    font-weight: bold;
+}
+
+form span {
+    font-family: 'Space Grotesk-regular';
+}
+
+#formulaire .btn {
+    padding: 15px 50px 15px 50px;
+}
+
+.f-control option {
+    background-color: #0f222c;
+}
+
+.choice {
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    justify-content: space-evenly;
+}
+
+.choice label {
+    font-size: 12px!important;
+    text-align: center;
+    width: 10em;
+}
+
+input[type="radio"].choix {
+    display: none;
+}
+
+input[type="radio"].choix+label:hover {
+    cursor: pointer;
+    background-color: #001520;
+}
+
+input[type="radio"].choix+label {
+    padding: 6px;
+    border: 1px solid;
+    border-image: linear-gradient(to right, #88857c 10%, #0a3855 95%);
+    border-image-slice: 1;
+    line-height: 1.5;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+input[type="radio"].choix:checked+label {
+    background-color: #001520;
+    color: #ffffff;
+}
+
+.btn-confirmer {
+    width: 270px;
+    height: 64px;
+    background-color: #07338c;
+    color: white;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: bold;
+    border: 0.1px solid rgb(74, 74, 119);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-confirmer:hover {
+    background-color: #07338c;
+}
+
+.ronde {
+    justify-content: space-evenly;
+    width: 5px;
+    height: 5px;
+    border: 1.5px solid rgb(46, 102, 148);
+    border-radius: 30px;
+    margin: 2px 2px 2px 2px;
+}
+
+.color {
+    background-color: rgb(46, 102, 148);
+}
+
+.h-50 {
+    height: 200px!important;
+}
+
+.cadre {
+    width: 280px;
+    height: 350px;
+    border: 1px solid #ccc;
+}
+
+.taille-img {
+    width: 100%;
+    height: 100%;
+}
+
+.f-formulaire::placeholder,
+#LABEL1::placeholder,
+#LABEL4::placeholder {
+    color: rgb(207, 207, 207);
+}
+
+select {
+    color: white;
+    background-color: black;
+}
+
+option {
+    background-color: black;
+}
+
+select option:checked {
+    background-color: black;
+}

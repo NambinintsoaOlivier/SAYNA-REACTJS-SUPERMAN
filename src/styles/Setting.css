@@ -1,0 +1,15 @@
+body {
+    background: linear-gradient(to bottom, #000000 50%, #0e141b 90%)!important;
+    color: white!important;
+}
+
+.boutt-on {
+    padding: 15px;
+    margin: 10px;
+    width: 150px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #00a, #820000);
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}

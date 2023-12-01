@@ -1,0 +1,28 @@
+@font-face {
+    font-family: Cantarell;
+    src: url("../styles/Assets/font/cantarell/Cantarell-Regular.ttf");
+}
+
+nav {
+    font-family: Cantarell;
+    background: linear-gradient(to bottom, #000000 10%, #f895c700 90%);
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    text-underline-position: under;
+    font-weight: bold;
+}
+
+.navbar-all {
+    flex-grow: 0!important;
+}
+
+.logoNav {
+    width: 110px;
+    padding: 8px;
+}
+
+.nav-link {
+    color: rgb(236, 236, 236)!important;
+}

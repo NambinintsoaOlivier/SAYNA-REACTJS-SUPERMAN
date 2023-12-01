@@ -1,0 +1,27 @@
+.bgHeader {
+    width: 83.96em;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.container,
+.container-fluid,
+.row {
+    --bs-gutter-x: 0rem!important;
+}
+
+.contenuHeader {
+    min-height: 40em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titreHeader {
+    font-size: 6.5rem!important;
+}
+
+.h-25 {
+    min-height: 300px;
+}
