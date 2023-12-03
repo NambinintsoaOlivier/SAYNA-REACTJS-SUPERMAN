@@ -55,6 +55,24 @@ const NavBar = () => {
                   MON COMPTE
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <Link
+                  to={"/login"}
+                  className="fs-3 ms-3 btn btn-primary"
+                  href="#"
+                >
+                  Connexion
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to={"/signup"}
+                  className=" fs-3 ms-3 btn btn-success"
+                  href="#"
+                >
+                  Inscription
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

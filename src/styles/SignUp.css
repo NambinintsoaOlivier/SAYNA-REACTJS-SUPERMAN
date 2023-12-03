@@ -1,0 +1,53 @@
+.hero-image-inscription {
+    background-image: url(../styles/Assets/images/img19.png);
+    height: 70em;
+    background-position: center;
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+    box-shadow: 121px 0px 197px 200px #000 inset;
+}
+
+.top-100 {
+    padding-top: 100px;
+}
+
+.bloc-form {
+    background-image: linear-gradient(to right, #03112e, #531017);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    width: 70%;
+}
+
+.form-control {
+    background-color: transparent;
+}
+
+.form {
+    background-color: rgba(122, 122, 122, 0.848);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.form-signin {
+    background: linear-gradient(to right, rgb(114 123 131), rgb(51 60 75));
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.form-switch .form-check-input {
+    height: 1.8em;
+    width: 3.5em;
+    cursor: pointer;
+    border: none;
+}

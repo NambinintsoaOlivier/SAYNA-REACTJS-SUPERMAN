@@ -3,3 +3,77 @@
     background-color: transparent;
     color: white;
 }
+
+.cadreAchat {
+    min-height: 430px;
+    min-width: 250px;
+    width: 250px!important;
+    margin-bottom: 5px;
+}
+
+.imgAchat {
+    width: 100%;
+    min-height: 260px;
+}
+
+.imgAchat img {
+    width: 100%;
+    min-height: 300px;
+}
+
+.nomAchat {
+    width: 100%;
+    min-height: 70px;
+}
+
+.borderAchat {
+    border: 2px solid white;
+}
+
+.btnAjoutPanier {
+    border-radius: 15px;
+    background-color: #07338c;
+    color: white;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/* BOUTON RANGE */
+
+
+/* Styles pour l'élément input de type range */
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+
+/* Styles pour le curseur du range */
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #af4c4c;
+    cursor: pointer;
+}
+
+
+/* Changement de style lorsque l'utilisateur interagit avec le range */
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]:active {
+    opacity: 1;
+}

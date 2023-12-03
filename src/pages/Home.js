@@ -19,6 +19,7 @@ import guill2 from "../styles/Assets/icones/icon_guillemets_2.png";
 import "../styles/Home.css";
 
 const Home = () => {
+  // les props dans header
   const [titre, setTitre] = useState(
     <div className="col-md-9 d-flex align-items-center ">
       <img src={logodc} className="rs-logodc" alt="" />
@@ -28,6 +29,7 @@ const Home = () => {
       </div>
     </div>
   );
+
   return (
     <div>
       <Header titre={titre} imgHeader={imgHeader} />

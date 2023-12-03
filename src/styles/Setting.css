@@ -9,7 +9,7 @@ body {
     width: 150px;
     border-radius: 10px;
     background-image: linear-gradient(to right, #00a, #820000);
-    color: white;
+    color: white!important;
     font-style: italic;
     font-weight: bold;
 }
