@@ -23,6 +23,20 @@ nav {
     padding: 8px;
 }
 
-.nav-link {
+.nav-link,
+.log,
+.sign {
+    font-size: 26px!important;
     color: rgb(236, 236, 236)!important;
+}
+
+@media screen and (max-width:767px) {
+    .nav-link,
+    .log,
+    .sign {
+        font-size: 12px!important;
+    }
+    .logoNav {
+        width: 70px;
+    }
 }

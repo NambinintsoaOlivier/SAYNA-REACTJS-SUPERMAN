@@ -1,7 +1,14 @@
+@font-face {
+    font-family: adventure;
+    src: url("../styles/Assets/font/adventure/Adventure.otf");
+}
+
 .bgHeader {
-    width: 83.96em;
+    width: 100%;
+    height: auto;
     position: absolute;
     top: 0;
+    left: 0;
     z-index: -1;
 }
 
@@ -20,8 +27,15 @@
 
 .titreHeader {
     font-size: 6.5rem!important;
+    font-family: adventure!important;
 }
 
 .h-25 {
     min-height: 300px;
+}
+
+@media screen and (max-width:767px) {
+    .contenuHeader {
+        min-height: 20em;
+    }
 }

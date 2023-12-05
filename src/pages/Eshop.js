@@ -35,8 +35,8 @@ const Eshop = (panier, Updatepanier) => {
 
   // les props dans header
   const [titre, setTitre] = useState(
-    <div className="col-md-9 d-flex align-items-center ">
-      <h1>ENVIE D’UN SLIP JAUNE ?</h1>
+    <div className="col-md-9 p-3 d-flex align-items-center ">
+      <h1  className="s-titreHeader">ENVIE D’UN SLIP JAUNE ?</h1>
     </div>
   );
 
@@ -54,7 +54,7 @@ const Eshop = (panier, Updatepanier) => {
       <div className="container ">
         <div className="row ">
           {/* colonne filtres */}
-          <div className="col-md-3 ">
+          <div className="col-md-3 p-3">
             <h3>FILTERS</h3>
             <label htmlFor="customRange">Prix :</label>
             <input

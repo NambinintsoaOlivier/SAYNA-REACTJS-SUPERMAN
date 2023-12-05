@@ -8,22 +8,34 @@ import PageNotFound from "../pages/PageNotFound";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import Panier from "./Panier";
+import { AuthContextProvider } from "../context/AuthContext";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* les routes */}
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="eshop" element={<Eshop />} />
-          <Route path="moncompte" element={<MonCompte />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="login" element={<Login />} />
-          <Route path="panier" element={<Panier />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Route>
-      </Routes>
+      <AuthContextProvider>
+        <Routes>
+          {/* les routes */}
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="eshop" element={<Eshop />} />
+            <Route
+              path="/moncompte"
+              element={
+                <ProtectedRoutes route="eshop">
+                  <MonCompte />
+                </ProtectedRoutes>
+              }
+            />
+            {/* <Route path="moncompte" element={<MonCompte />} /> */}
+            <Route path="signup" element={<SignUp />} />
+            <Route path="login" element={<Login />} />
+            <Route path="panier" element={<Panier />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Route>
+        </Routes>
+      </AuthContextProvider>
     </BrowserRouter>
   );
 };

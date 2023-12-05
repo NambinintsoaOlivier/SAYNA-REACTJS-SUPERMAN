@@ -1,11 +1,25 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import imgHeader from "../styles/Assets/images/img37.png";
+import "../styles/MonCompte.css";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const MonCompte = () => {
+  const { navigate } = useNavigate();
+  const { user, logout } = useAuth();
+
+  const deconnecter = async () => {
+    try {
+      await logout();
+      navigate("/eshop");
+    } catch (e) {
+      console.log(e);
+    }
+  };
   // les props dans header
   const [titre, setTitre] = useState(
-    <div className="col-md-9 d-flex align-items-center ">
+    <div className="col-md-9 p-3 d-flex align-items-center ">
       <h1>
         SERIEZ VOUS KRYPTONIEN ? <br /> DITES NOUS EN PLUS?
       </h1>
@@ -18,25 +32,29 @@ const MonCompte = () => {
       <Header titre={titre} imgHeader={imgHeader} />
       <br />
       <div className="container">
-        <div className="row">
+        <div className="row p-3">
           <div className="col-md-4">
             <h5 className="">Mes informations</h5>
             <p>Historique des commandes</p>
             <p>Mes avis</p>
             <p>Mes favoris</p>
-            {/* <button className="btn boutt-on" onClick={deconnecter}>
+            <button className="btn boutt-on" onClick={deconnecter}>
               DECONNEXON
-            </button> */}
-            <button className="btn boutt-on">DECONNEXON</button>
+            </button>
           </div>
           <div className="col-md-8">
             <h3>INFORMATIONS PERSONNELS</h3>
             <hr />
-            {/* <p>Nom : {user && user.displayName}</p> */}
-            <p>Nom : </p>
+            <p>
+              Nom :
+              <span className="text-primary"> {user && user.displayName}</span>
+            </p>
+
             <p>Prenom :</p>
             <p>Mot de passe : </p>
-            {/* <p>Email :{user && user.email}</p> */}
+            <p>
+              Email : <span className="text-primary">{user && user.email}</span>{" "}
+            </p>
             <p>Email :</p>
             <p>Numero de téléphone :</p>
             <p>Adresse de livraison : </p>
@@ -45,7 +63,7 @@ const MonCompte = () => {
           </div>
         </div>
         <br />
-        <div className="row">
+        <div className="row p-3">
           <div className="col-md-4"></div>
           <div className="col-md-8">
             <h3>NEWSLETTER</h3>

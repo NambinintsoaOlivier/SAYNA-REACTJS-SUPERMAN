@@ -26,6 +26,7 @@
 
 .form-control {
     background-color: transparent;
+    color: #111111!important;
 }
 
 .form {
@@ -46,8 +47,8 @@
 }
 
 .form-switch .form-check-input {
-    height: 1.8em;
-    width: 3.5em;
+    height: 1.8em!important;
+    width: 3.5em!important;
     cursor: pointer;
     border: none;
 }

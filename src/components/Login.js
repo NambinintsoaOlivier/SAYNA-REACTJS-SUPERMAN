@@ -1,32 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   // declaration de variable qui va contenir les donnees
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   // // pour la navigation auto dans une autre page
   const navigate = useNavigate();
 
   // pour avoir acces au function login dans useAuth
-  // const { login } = useAuth();
+  const { login } = useAuth();
 
   // bouton validation
-  // const onSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setError("");
-  //   try {
-  //     await login(email, password);
-  //     navigate("/moncompte");
-  //   } catch (e) {
-  //     setError(e.message);
-  //   }
-  // };
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await login(email, password);
+      navigate("/moncompte");
+    } catch (e) {
+      setError(e.message);
+    }
+  };
   return (
     <>
       <section id="hero">
@@ -42,7 +42,7 @@ const Login = () => {
                 <Link to={"/signup"}> inscrivez-vous ici</Link>
               </p>
             </div>
-            <form onSubmit={"onSubmit"}>
+            <form onSubmit={onSubmit}>
               <div className="mb-3">
                 <label
                   htmlFor="exampleFormControlInput3"
@@ -55,8 +55,8 @@ const Login = () => {
                   placeholder="email"
                   className="form-control"
                   id="exampleFormControlInput3"
-                  value={"email"}
-                  // onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="mb-3">
@@ -70,15 +70,15 @@ const Login = () => {
                   type="password"
                   className="form-control"
                   id="exampleFormControlInput4"
-                  value={"password"}
-                  // onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <button className="w-100 btn btn-lg btn-primary" type="submit">
                 VALIDER
               </button>
             </form>
-            <div>{"error"}</div>
+            <div>{error}</div>
           </div>
         </div>
       </main>

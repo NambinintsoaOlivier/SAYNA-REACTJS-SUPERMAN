@@ -21,11 +21,11 @@ import "../styles/Home.css";
 const Home = () => {
   // les props dans header
   const [titre, setTitre] = useState(
-    <div className="col-md-9 d-flex align-items-center ">
+    <div className="col-md-9 d-flex align-items-center justify-content-center ">
       <img src={logodc} className="rs-logodc" alt="" />
       <div>
         <h1 className="titreHeader">SUPERMAN</h1>
-        <h2>L'HOMME D'ACIER</h2>
+        <h2 className="s-titreHeader">L'HOMME D'ACIER</h2>
       </div>
     </div>
   );
@@ -33,7 +33,7 @@ const Home = () => {
   return (
     <div>
       <Header titre={titre} imgHeader={imgHeader} />
-      <section className="container text-white p-2 ">
+      <section className="container text-white p-3 ">
         <div className="ms-3 ">
           <h2>SUPERMAN AU CINEMA</h2>
           <p className="text-justify mt-2 mb-2">
@@ -56,19 +56,19 @@ const Home = () => {
             costume et devient Superman, l’homme d’acier aux yeux du monde
           </p>
           <div className="d-flex justify-content-between flex-wrap mt-4">
-            <div className="cadreImg">
-              <img className="mt-2" src={img1} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img1} alt="" />
             </div>
-            <div className="cadreImg">
-              <img className="mt-2" src={img2} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img2} alt="" />
             </div>
-            <div className="cadreImg">
-              <img className="mt-2" src={img3} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img3} alt="" />
             </div>
           </div>
         </div>
       </section>
-      <section className="container text-white p-2 mt-4">
+      <section className="container text-white p-3 mt-4">
         <div className="ms-3 ">
           <h2>NÉMÉSIS</h2>
           <p className="text-justify mt-2 mb-2">
@@ -86,19 +86,19 @@ const Home = () => {
             adversaires
           </p>
           <div className="d-flex justify-content-between flex-wrap mt-4">
-            <div className="cadreImg">
-              <img className="mt-2" src={img4} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img4} alt="" />
             </div>
-            <div className="cadreImg">
-              <img className="mt-2" src={img5} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img5} alt="" />
             </div>
-            <div className="cadreImg">
-              <img className="mt-2" src={img6} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img6} alt="" />
             </div>
           </div>
         </div>
       </section>
-      <section className="container text-white p-2 mt-4">
+      <section className="container text-white p-3 mt-4">
         <div className="ms-3 ">
           <h2>ALLIÉS</h2>
           <p className="text-justify mt-2 mb-2">
@@ -114,21 +114,21 @@ const Home = () => {
             sa partenaire et son seul “véritable amour”
           </p>
           <div className="d-flex justify-content-between flex-wrap mt-4">
-            <div className="cadreImg">
-              <img className="mt-2" src={img7} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img7} alt="" />
             </div>
-            <div className="cadreImg">
-              <img className="mt-2" src={img8} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img8} alt="" />
             </div>
-            <div className="cadreImg">
-              <img className="mt-2" src={img9} alt="" />
+            <div className="cadreImg mt-3">
+              <img src={img9} alt="" />
             </div>
           </div>
         </div>
       </section>
-      <div className="container-fluid text-white p-2 mt-4">
+      <div className="container-fluid text-white p-3 mt-4">
         <div className="bgSection">
-          <div className="container text-white p-2 mt-4">
+          <div className="container text-white p-3 mt-4">
             <div className="ms-3 ">
               <h2>BATMAN V SUPERMAN</h2>
               <p className="text-justify mt-2 mb-2">
@@ -157,7 +157,7 @@ const Home = () => {
               </p>
               <h2>MULTIMÉDIA</h2>
               <section id="batsup">
-                <div className="container">
+                <div className="container ">
                   <div
                     id="carouselExampleControls"
                     className="carousel slide"
@@ -283,11 +283,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <section className="container text-white p-2 ">
-        <div className="ms-3 w-100">
+      <section className="container text-white p-3  ">
+        <div className="d-flex justify-content-center w-100">
           <iframe
-            width="100%"
-            height="400"
+            width="90%"
+            height="550"
             src="https://www.youtube.com/embed/yP7J0rlFkrg?si=4Wdk9fu8AF2tsXkL"
             title="YouTube video player"
             frameborder="0"
@@ -299,7 +299,7 @@ const Home = () => {
       <div className="container-fluid d-flex justify-content-center">
         <div id="formulaire">
           <div className="bg-formulaire d-flex justify-content-center">
-            <div className="row justify-content-center ">
+            <div className="row justify-content-center w-100">
               <form className="text-white" onSubmit={"onSubmitMessage"}>
                 <p>PRENOMS CONTACT</p>
                 <label htmlFor="LABEL1">ADEMAILRESSE </label>

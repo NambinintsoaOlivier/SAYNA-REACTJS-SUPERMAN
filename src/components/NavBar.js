@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/NavBar.css";
 import { Link, NavLink } from "react-router-dom";
 import logoNav from "../styles/Assets/logos/logo_blanc.png";
+import { useAuth } from "../context/AuthContext";
 
 const NavBar = () => {
+  const { user } = useAuth();
+
+  const [isMenuOpen, setMenuOpen] = useState();
+
+  const handleItemClick = () => {
+    setMenuOpen(false);
+  };
   return (
     <div>
       <nav
@@ -22,57 +30,63 @@ const NavBar = () => {
             aria-controls="navbarsExample03"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={() => setMenuOpen(!isMenuOpen)}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div
-            className="collapse navbar-collapse navbar-all m-2"
+            className={`collapse navbar-collapse ${
+              isMenuOpen ? "open" : ""
+            } navbar-all m-2`}
             id="navbarsExample03"
           >
             <ul className="navbar-nav me-auto mb-2 mb-sm-0">
-              <li className="nav-item">
+              <li className="nav-item " onClick={handleItemClick}>
                 <NavLink
                   to={"/"}
-                  className="nav-link fs-3 ms-3"
+                  className="nav-link   ms-3"
                   aria-current="page"
                 >
                   HOME
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink to={"/game"} className="nav-link fs-3 ms-3">
+              <li className="nav-item" onClick={handleItemClick}>
+                <NavLink to={"/game"} className="nav-link  ms-3">
                   GAME
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink to={"/eshop"} className="nav-link fs-3 ms-3">
+              <li className="nav-item" onClick={handleItemClick}>
+                <NavLink to={"/eshop"} className="nav-link  ms-3">
                   E-SHOP
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink to={"/moncompte"} className="nav-link fs-3 ms-3">
-                  MON COMPTE
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to={"/login"}
-                  className="fs-3 ms-3 btn btn-primary"
-                  href="#"
-                >
-                  Connexion
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to={"/signup"}
-                  className=" fs-3 ms-3 btn btn-success"
-                  href="#"
-                >
-                  Inscription
-                </Link>
-              </li>
+              {user ? (
+                <li className="nav-item" onClick={handleItemClick}>
+                  <NavLink to={"/moncompte"} className="nav-link  ms-3">
+                    MON COMPTE
+                  </NavLink>
+                </li>
+              ) : (
+                <>
+                  <li className="nav-item" onClick={handleItemClick}>
+                    <Link
+                      to={"/login"}
+                      className="log ms-3 mb-2 btn btn-outline-primary"
+                    >
+                      Connexion
+                    </Link>
+                  </li>
+                  <li className="nav-item" onClick={handleItemClick}>
+                    <Link
+                      to={"/signup"}
+                      className="sign  ms-3 btn btn-outline-success"
+                    >
+                      Inscription
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

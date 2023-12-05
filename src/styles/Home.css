@@ -93,7 +93,8 @@
 
 #formulaire form {
     height: auto;
-    width: 90%;
+    width: 60%;
+    min-width: 400px;
 }
 
 .bg-formulaire {
@@ -225,4 +226,43 @@ option {
 
 select option:checked {
     background-color: black;
+}
+
+.col-3 {
+    height: 100%;
+}
+
+@media screen and (max-width:767px) {
+    .rs-logodc {
+        width: 150px;
+    }
+    .titreHeader {
+        font-size: 40px!important;
+    }
+    .s-titreHeader {
+        font-size: 12px!important;
+    }
+    .box-text div p {
+        font-size: 8px;
+    }
+    .box {
+        /* width: 120px; */
+    }
+    h5 {
+        font-size: 0.9rem!important;
+    }
+    .box-contenu {
+        min-width: 280px;
+    }
+    .col-6 {
+        width: 70%!important;
+    }
+    .btn-confirmer {
+        width: 200px;
+        height: 50px;
+        font-size: 18px;
+    }
+    #formulaire form p {
+        font-size: 20px;
+    }
 }

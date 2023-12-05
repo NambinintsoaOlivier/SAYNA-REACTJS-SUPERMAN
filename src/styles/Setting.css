@@ -1,3 +1,8 @@
+@font-face {
+    font-family: adv;
+    src: url("../styles/Assets/font/advent-pro/AdventPro-SemiBold.ttf");
+}
+
 body {
     background: linear-gradient(to bottom, #000000 50%, #0e141b 90%)!important;
     color: white!important;
@@ -13,4 +18,10 @@ body {
     font-style: italic;
     font-weight: bold;
     border: 1px solid rgb(34, 34, 166);
+}
+
+.s-titreHeader {
+    font-family: adv;
+    font-style: italic;
+    font-size: 50px;
 }

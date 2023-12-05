@@ -1,38 +1,38 @@
 import React, { useState } from "react";
 import "../styles/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
-// import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 import { useRef } from "react";
 
 const SignUp = () => {
   // declaration de variable qui va contenir les donnees
-  // const [nomUser, setNomUser] = useState("");
-  // const [prenomUser, setPrenomUser] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const passwordConfirmRef = useRef();
-  // const [error, setError] = useState("");
+  const [nomUser, setNomUser] = useState("");
+  const [prenomUser, setPrenomUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const passwordConfirmRef = useRef();
+  const [error, setError] = useState("");
 
   // pour la navigation auto dans une autre page
   const navigate = useNavigate();
 
   // pour avoir acces au function createUser dans useAuth
-  // const { createUser } = useAuth();
+  const { createUser } = useAuth();
 
   // validation
-  // const onSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (password !== passwordConfirmRef.current.value) {
-  //     return setError("Les password ne sont pas identique");
-  //   }
-  //   setError("");
-  //   try {
-  //     await createUser(email, password, nomUser, prenomUser);
-  //     navigate("/moncompte");
-  //   } catch (e) {
-  //     setError(e.message);
-  //   }
-  // };
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== passwordConfirmRef.current.value) {
+      return setError("Les password ne sont pas identique");
+    }
+    setError("");
+    try {
+      await createUser(email, password, nomUser, prenomUser);
+      navigate("/moncompte");
+    } catch (e) {
+      setError(e.message);
+    }
+  };
 
   return (
     <>
@@ -49,7 +49,8 @@ const SignUp = () => {
                 <Link to={"/login"}> connectez-vous ici</Link>
               </p>
             </div>
-            <form onSubmit={"onSubmit"}>
+            <form onSubmit={onSubmit}>
+              {/* <form onSubmit={"onSubmit"}> */}
               <div className="mb-3">
                 <label
                   htmlFor="exampleFormControlInput1"
@@ -62,8 +63,9 @@ const SignUp = () => {
                   placeholder="Nom"
                   className="form-control"
                   id="exampleFormControlInput1"
-                  value={"nomUser"}
-                  // onChange={(e) => setNomUser(e.target.value)}
+                  // value={"nomUser"}
+                  value={nomUser}
+                  onChange={(e) => setNomUser(e.target.value)}
                   required
                 />
               </div>
@@ -79,8 +81,9 @@ const SignUp = () => {
                   placeholder="Premons"
                   className="form-control"
                   id="exampleFormControlInput2"
-                  value={"prenomUser"}
-                  // onChange={(e) => setPrenomUser(e.target.value)}
+                  // value={"prenomUser"}
+                  value={prenomUser}
+                  onChange={(e) => setPrenomUser(e.target.value)}
                   required
                 />
               </div>
@@ -96,8 +99,9 @@ const SignUp = () => {
                   placeholder="email"
                   className="form-control"
                   id="exampleFormControlInput3"
-                  value={"email"}
-                  // onChange={(e) => setEmail(e.target.value)}
+                  // value={"email"}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
@@ -112,8 +116,9 @@ const SignUp = () => {
                   type="password"
                   className="form-control"
                   id="exampleFormControlInput4"
-                  value={"password"}
-                  // onChange={(e) => setPassword(e.target.value)}
+                  // value={"password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
@@ -125,7 +130,8 @@ const SignUp = () => {
                   type="password"
                   className="form-control"
                   id="confirmePassword"
-                  ref={"passwordConfirmRef"}
+                  // ref={"passwordConfirmRef"}
+                  ref={passwordConfirmRef}
                   required
                 />
               </div>
@@ -148,7 +154,8 @@ const SignUp = () => {
                 VALIDER
               </button>
             </form>
-            <div className="text-center">{"error"}</div>
+            {/* <div className="text-center">{"error"}</div> */}
+            <div className="text-center">{error}</div>
           </div>
         </div>
       </main>
