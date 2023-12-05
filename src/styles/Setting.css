@@ -12,4 +12,5 @@ body {
     color: white!important;
     font-style: italic;
     font-weight: bold;
+    border: 1px solid rgb(34, 34, 166);
 }

@@ -7,6 +7,7 @@ import MonCompte from "../pages/MonCompte";
 import PageNotFound from "../pages/PageNotFound";
 import SignUp from "./SignUp";
 import Login from "./Login";
+import Panier from "./Panier";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="moncompte" element={<MonCompte />} />
           <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />
+          <Route path="panier" element={<Panier />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

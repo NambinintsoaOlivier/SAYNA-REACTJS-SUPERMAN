@@ -6,28 +6,29 @@ import fleche from "../styles/Assets/icones/fleche_down_header.png";
 import products from "../data/Products";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "../styles/Eshop.css";
+import Products from "../components/Products";
 
-const Eshop = () => {
+const Eshop = (panier, Updatepanier) => {
   // les produits dans Products
-  const [data, setData] = useState(products);
+  // const [data, setData] = useState(products);
 
   // declaration variable qui contient le valeur du filtrage
-  const [selectedFilters, setSelectedFilters] = useState([]);
+  // const [selectedFilters, setSelectedFilters] = useState([]);
 
   // fonction du filtrage
-  const handleFilterChange = (event) => {
-    const value = event.target.value;
-    const isChecked = event.target.checked;
+  // const handleFilterChange = (event) => {
+  //   const value = event.target.value;
+  //   const isChecked = event.target.checked;
 
-    // Mise à jour de la liste des filtres sélectionnés
-    setSelectedFilters((prevFilters) => {
-      if (isChecked) {
-        return [...prevFilters, value];
-      } else {
-        return prevFilters.filter((filter) => filter !== value);
-      }
-    });
-  };
+  //   // Mise à jour de la liste des filtres sélectionnés
+  //   setSelectedFilters((prevFilters) => {
+  //     if (isChecked) {
+  //       return [...prevFilters, value];
+  //     } else {
+  //       return prevFilters.filter((filter) => filter !== value);
+  //     }
+  //   });
+  // };
 
   //prix affiché
   const options = [0, 50, 100];
@@ -39,6 +40,10 @@ const Eshop = () => {
     </div>
   );
 
+  // permet d'ajouter le produit dans le panier
+  const addToPanier = (products) => {
+    console.log("ajouter");
+  };
   return (
     <div>
       <Header titre={titre} imgHeader={imgHeader} />
@@ -276,33 +281,14 @@ const Eshop = () => {
             </div>
           </div>
           <div className="col-md-9 d-flex p-2 flex-column">
-            <Link to="/cart" className="align-self-end">
+            <Link to="/panier" className="align-self-end">
               <img src={ShoppingCartIcon} alt="panier" />
             </Link>
 
             {/* les produits dans des blocs */}
             <div className="container">
               <div className="row justify-content-around mt-4">
-                {data.map((values) => {
-                  const { id, title, price, description, imageURL, categorie } =
-                    values;
-                  return (
-                    <div key={id} className="cadreAchat">
-                      <div className="borderAchat">
-                        <div className="imgAchat">
-                          <img src={imageURL} alt="" />
-                        </div>
-                        <div className="nomAchat text-center">
-                          <h5 className="text-center">{title}</h5>
-                          <strong className="text-center">{price} €</strong>
-                        </div>
-                      </div>
-                      <button className="mt-4 w-100 btnAjoutPanier mb-4 p-4 justify-self-end">
-                        AJOUTER AU PANIER
-                      </button>
-                    </div>
-                  );
-                })}
+                <Products products={products} addToPanier={addToPanier} />
               </div>
             </div>
           </div>
