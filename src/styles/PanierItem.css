@@ -1,0 +1,19 @@
+.nombre-element {
+    color: rgb(103, 103, 103);
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+}
+
+.nombre-element>* {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border: 0.1px solid rgb(146, 153, 153);
+    background-color: rgb(207, 214, 214);
+}
+
+.nombre-element>span {
+    padding: 5px;
+    text-align: center;
+}

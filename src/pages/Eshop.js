@@ -1,49 +1,42 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import imgHeader from "../styles/Assets/images/img20.png";
 import fleche from "../styles/Assets/icones/fleche_down_header.png";
-import products from "../data/Products";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "../styles/Eshop.css";
-import Products from "../components/Products";
+import ProductsList from "../components/ProductsList";
 
-const Eshop = (panier, Updatepanier) => {
-  // les produits dans Products
-  // const [data, setData] = useState(products);
-
+const Eshop = ({ addToPanier, handleRemoveItem }) => {
   // declaration variable qui contient le valeur du filtrage
-  // const [selectedFilters, setSelectedFilters] = useState([]);
+  const [selectedFilters, setSelectedFilters] = useState([]);
 
   // fonction du filtrage
-  // const handleFilterChange = (event) => {
-  //   const value = event.target.value;
-  //   const isChecked = event.target.checked;
+  const handleFilterChange = (event) => {
+    const value = event.target.value;
+    const isChecked = event.target.checked;
 
-  //   // Mise à jour de la liste des filtres sélectionnés
-  //   setSelectedFilters((prevFilters) => {
-  //     if (isChecked) {
-  //       return [...prevFilters, value];
-  //     } else {
-  //       return prevFilters.filter((filter) => filter !== value);
-  //     }
-  //   });
-  // };
-
-  //prix affiché
+    // Mise à jour de la liste des filtres sélectionnés
+    setSelectedFilters((prevFilters) => {
+      if (isChecked) {
+        return [...prevFilters, value];
+      } else {
+        return prevFilters.filter((filter) => filter !== value);
+      }
+    });
+  };
+  const navigate = useNavigate();
+  // const { user } = useAuth();
+  // prix affiché
   const options = [0, 50, 100];
 
   // les props dans header
   const [titre, setTitre] = useState(
     <div className="col-md-9 p-3 d-flex align-items-center ">
-      <h1  className="s-titreHeader">ENVIE D’UN SLIP JAUNE ?</h1>
+      <h1 className="s-titreHeader">ENVIE D’UN SLIP JAUNE ?</h1>
     </div>
   );
 
-  // permet d'ajouter le produit dans le panier
-  const addToPanier = (products) => {
-    console.log("ajouter");
-  };
   return (
     <div>
       <Header titre={titre} imgHeader={imgHeader} />
@@ -288,7 +281,10 @@ const Eshop = (panier, Updatepanier) => {
             {/* les produits dans des blocs */}
             <div className="container">
               <div className="row justify-content-around mt-4">
-                <Products products={products} addToPanier={addToPanier} />
+                <ProductsList
+                  addToPanier={addToPanier}
+                  handleRemoveItem={handleRemoveItem}
+                />
               </div>
             </div>
           </div>

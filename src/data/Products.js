@@ -82,4 +82,6 @@ const products = [
   },
 ];
 
-export default products;
+const panier = [];
+
+export { products, panier };

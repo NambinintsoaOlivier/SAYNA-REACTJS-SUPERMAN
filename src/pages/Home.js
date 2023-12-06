@@ -25,7 +25,7 @@ const Home = () => {
       <img src={logodc} className="rs-logodc" alt="" />
       <div>
         <h1 className="titreHeader">SUPERMAN</h1>
-        <h2 className="s-titreHeader">L'HOMME D'ACIER</h2>
+        <h2 className="s-titreHeader">L HOMME D ACIER</h2>
       </div>
     </div>
   );
@@ -287,7 +287,7 @@ const Home = () => {
         <div className="d-flex justify-content-center w-100">
           <iframe
             width="90%"
-            height="550"
+            height="100%"
             src="https://www.youtube.com/embed/yP7J0rlFkrg?si=4Wdk9fu8AF2tsXkL"
             title="YouTube video player"
             frameborder="0"
@@ -302,7 +302,7 @@ const Home = () => {
             <div className="row justify-content-center w-100">
               <form className="text-white" onSubmit={"onSubmitMessage"}>
                 <p>PRENOMS CONTACT</p>
-                <label htmlFor="LABEL1">ADEMAILRESSE </label>
+                <label htmlFor="LABEL1">ADRESSE EMAIL</label>
                 <input
                   className="form-control f-formulaire"
                   placeholder="Adresse email"
@@ -370,6 +370,7 @@ const Home = () => {
                   </button>
                 </div>
               </form>
+              <br />
             </div>
           </div>
         </div>

@@ -1,3 +1,13 @@
+@font-face {
+    font-family: radjhani;
+    src: url("../styles/Assets/font/rajdhani/Rajdhani-Regular.ttf");
+}
+
+@font-face {
+    font-family: grotesk;
+    src: url("../styles/Assets/font/cantarell/Cantarell-Regular.ttf");
+}
+
 .text-justify {
     text-align: justify!important;
 }
@@ -74,7 +84,7 @@
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
-    height: 700px;
+    height: 720px;
 }
 
 .form-control {
@@ -94,7 +104,11 @@
 #formulaire form {
     height: auto;
     width: 60%;
-    min-width: 400px;
+    /* min-width: 400px; */
+}
+
+.choice>* {
+    margin-left: 10px;
 }
 
 .bg-formulaire {
@@ -105,18 +119,16 @@
 #formulaire form p {
     font-size: 30px;
     text-align: center;
-    font-family: 'Space Grotesk-regular';
+    font-family: grotesk;
 }
 
 #formulaire form label {
     font-size: 20px;
     margin-top: 30px;
-    font-family: 'rajdhani';
-    font-weight: bold;
 }
 
 form span {
-    font-family: 'Space Grotesk-regular';
+    font-family: grotesk;
 }
 
 #formulaire .btn {
@@ -240,7 +252,7 @@ select option:checked {
         font-size: 40px!important;
     }
     .s-titreHeader {
-        font-size: 12px!important;
+        font-size: 20px!important;
     }
     .box-text div p {
         font-size: 8px;
@@ -252,7 +264,7 @@ select option:checked {
         font-size: 0.9rem!important;
     }
     .box-contenu {
-        min-width: 280px;
+        min-width: 150px;
     }
     .col-6 {
         width: 70%!important;
@@ -264,5 +276,20 @@ select option:checked {
     }
     #formulaire form p {
         font-size: 20px;
+    }
+    .cadreImg img {
+        width: 80%!important;
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 5%!important;
+    }
+    .form-label,
+    label,
+    .form-control {
+        font-size: 12px!important;
+    }
+    .head>p {
+        font-size: 12px!important;
     }
 }

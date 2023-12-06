@@ -1,19 +1,20 @@
-import React, { useEffect } from "react";
+//Panier.js
+import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Panier.css";
+import PanierList from "./PanierList";
 
-const Panier = ({ panier, Updatepanier }) => {
-  const total = panier.reduce(
-    (acc, prodType) => acc + prodType.amount * prodType.price,
-    0
-  );
+const calculateTotalPrice = (panier) => {
+  const totalPrice = panier.reduce((total, product) => {
+    return total + product.qty * product.price;
+  }, 0);
 
-  useEffect(() => {
-    document.title = `${total}€ d'achats`;
-  }, [total]);
-
+  return totalPrice;
+};
+const Panier = ({ panier, removeFromPanier }) => {
+  const totalAchats = calculateTotalPrice(panier);
   return (
-    <div className="mt-4">
+    <div className="mt-4 p-4">
       <div className="container">
         <p>
           <Link to={"/eshop"} className="link">
@@ -24,43 +25,27 @@ const Panier = ({ panier, Updatepanier }) => {
       </div>
       <div className="container">
         <h3>RECAPITULATIF DU PANIER</h3>
-        {panier.length > 0 ? (
-          <div>
-            {panier.map(({ title, price, imageUrl, amount }, index) => (
-              <div
-                key={`${title}-${index}`}
-                className="cadre-produit-panier d-flex  w-100 p-4 align-items-center mt-3"
-              >
-                <div className="element-img-panier">
-                  <img className="w-100" src={imageUrl} alt="" />
-                </div>
-                <div className="element-info-panier w-50 m-2">
-                  <h4>{title}</h4>
-                  <p>Numero du produit</p>
-                  <span>X-----</span>
-                </div>
-                <div className="d-flex justify-content-between w-100">
-                  <div className="element-prix">
-                    <h3>{price}</h3>
-                  </div>
-                  <div className="nombre-element ">2</div>
-                  <button className="justify-self-end">fermer</button>
-                </div>
+        <div>
+          {/* Assurez-vous de vérifier si le panier est défini avant de passer à PanierList */}
+          {panier && (
+            <div>
+              <PanierList panier={panier} removeFromPanier={removeFromPanier} />
+              <br />
+              <div className="d-flex justify-content-end">
+                <h2>Total :{totalAchats} €</h2>
               </div>
-            ))}
-
-            <div className="container d-flex justify-content-end mt-2">
-              <h2>TOTAL :{total} €</h2>
             </div>
-          </div>
-        ) : (
-          <div>Vide</div>
-        )}
+          )}
+        </div>
       </div>
 
       <div className="container d-flex justify-content-center">
-        <button className="boutt-on w-25"> CONTINUER MES ACHATS</button>
-        <button className="boutt-on w-25">PASSER LA COMMANDE</button>
+        <Link to={"/eshop"}>
+          <button className="boutt-on w-100 ms-1">CONTINUER MES ACHATS</button>
+        </Link>
+        <Link to={"/eshop"}>
+          <button className="boutt-on w-100">PASSER LA COMMANDE</button>
+        </Link>
       </div>
     </div>
   );

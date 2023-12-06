@@ -36,6 +36,15 @@
 
 @media screen and (max-width:767px) {
     .contenuHeader {
-        min-height: 20em;
+        min-height: 200px;
+    }
+    .contenuHeader>.row {
+        min-height: 20px!important;
+    }
+    .contenuHeader .flex-column {
+        flex-direction: row!important;
+    }
+    .s-titreHeader>h1 {
+        font-size: 30pximportant;
     }
 }

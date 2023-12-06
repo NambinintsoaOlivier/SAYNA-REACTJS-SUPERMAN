@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProduitItem = ({ product, addToPanier }) => {
-  const { title, imageURL, price, description, categorie, id } = product;
+  const { title, imageURL, price, id } = product;
   const handleToPanier = () => {
     addToPanier(product);
   };
@@ -18,7 +18,7 @@ const ProduitItem = ({ product, addToPanier }) => {
       </div>
       <button
         className="mt-4 w-100 btnAjoutPanier mb-4 p-4 justify-self-end"
-        onClick={() => handleToPanier(title, imageURL, price)}
+        onClick={() => handleToPanier(id)}
       >
         AJOUTER AU PANIER
       </button>
